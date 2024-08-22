@@ -67,7 +67,7 @@ const Project = () => {
           :
           (<div className='flex flex-wrap justify-center items-center gap-8 mb-4'>
             {projectData.map((proj, ind) => (
-              <ProjectCard proj={proj} />
+              <ProjectCard key={ind} proj={proj} />
             ))}
           </div>)}
       </div>

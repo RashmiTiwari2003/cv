@@ -19,7 +19,7 @@ const Main = () => {
                 i.current = 0;
             }
         }, 2000)
-    }, []);
+    },[]);
 
     return (
         <div id='home' className='relative flex justify-center items-center w-full min-h-[75vh] sm:min-h-[90vh]'>
