@@ -17,7 +17,7 @@ const About = () => {
             </div>
             <div >
                 <button className='border-2 bg-blue-400 hover:bg-blue-800 hover:shadow-[0_20px_8px_-4px_rgb(173,216,230)] md:mt-4 px-5 py-3 hover:border-blue-800 rounded-lg w-fit font-extrabold font-mono hover:text-white transition delay-150 ease-in-out hover:scale-110'><a
-                    href="Rashmi's Resume.pdf" download="Rashmi's Resume">Download Resume</a></button>
+                    href="Rashmi Resume.pdf" download="Rashmi's Resume">Download Resume</a></button>
             </div>
         </div>
     )
