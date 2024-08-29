@@ -44,7 +44,7 @@ const Project = () => {
       <h2 className="mx-6 md:mx-0 mb-8 font-bold text-2xl md:text-3xl">Projects</h2>
       <div className='flex justify-center items-center gap-2 md:gap-8 mt-4 mb-6'>
         {Category.map((cat, ind) => (
-          <button key={ind} onClick={() => setCategory(cat)} className='flex justify-center items-center bg-blue-800 hover:bg-white mb-4 hover:mb-0 px-4 py-2 hover:border-b-4 hover:border-blue-800 rounded-lg md:w-28 hover:font-bold text-sm text-white sm:text-base hover:text-black capitalize'>{cat}</button>
+          <button key={ind} onClick={() => setCategory(cat)} className={`${cat===category?'bg-white border-b-4 text-black border-blue-800 mb-0 font-bold':'' } flex justify-center items-center bg-blue-800 hover:bg-white mb-4 hover:mb-0 px-4 py-2 hover:border-b-4 hover:border-blue-800 rounded-lg md:w-28 hover:font-bold text-sm text-white sm:text-base hover:text-black capitalize`}>{cat}</button>
         ))}
       </div>
       <div className='flex flex-row flex-wrap justify-center items-center px-2'>
