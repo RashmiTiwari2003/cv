@@ -2,6 +2,14 @@ const Category = ['all', 'react js', 'front end', 'ml'];
 
 const projects = [
     {
+        name: "Text-2-Speech",
+        category: 'react js',
+        image: "/images/projects/text2speech.png",
+        desc: "A responsive Website coverting text to speech in various accent using NextJS, Typescript.",
+        link: "https://text2speech-phi.vercel.app/",
+        github: "https://github.com/RashmiTiwari2003/Text2Speech",
+    },
+    {
         name: "Emotions Predictor",
         category: 'ml',
         image: "/images/projects/emotionspredictor.png",
