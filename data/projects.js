@@ -1,4 +1,5 @@
-const categories = ['All', 'Professional', 'full stack', 'react js', 'frontend', 'ml'];
+// const categories = ['All', 'Professional', 'full stack', 'react js', 'frontend', 'ml'];
+const categories = ['All', 'full stack', 'react js', 'frontend', 'ml'];
 
 const projects = [
     {
