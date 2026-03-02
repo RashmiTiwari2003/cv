@@ -9,30 +9,20 @@ const projects = [
         duration: 'Aug 2024 - Dec 2024',
         dark: true,
         category: 'full stack',
-        viewCategory: true,
+        viewCategory: false,
         thumbnail: "/images/projects/taskly-dashboard.png",
         technologies: ['NextJS', 'Prisma', 'MongoDB', 'TypeScript', 'Express JS', 'REST API', 'Authentication'],
         desc: "A responsive Website to manage projects and track workflow facilitating significant boost in productivity.",
         link: "https://taskly-ten-pi.vercel.app/",
         github: "https://github.com/RashmiTiwari2003/Taskly",
-        media: [
-            {
-            type: 'image',
-            url: 'https://images.unsplash.com/photo-1768987439382-894ea4e2a736?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBzaG9wcGluZyUyMGludGVyZmFjZXxlbnwxfHx8fDE3Njk4NDU0MTN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-            caption: 'Homepage redesign with modern hero section and product cards'
-            },
-            {
-            type: 'image',
-            url: 'https://images.unsplash.com/photo-1691073112675-9685bc6779bf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjByZXNwb25zaXZlJTIwZGVzaWdufGVufDF8fHx8MTc2OTg4Njg0NHww&ixlib=rb-4.1.0&q=80&w=1080',
-            caption: 'Mobile-responsive checkout flow'
-            },
-            {
-            type: 'video',
-            url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-            caption: 'Product interaction demo'
-            }
-        ],
-        liveUrl: 'https://example.com',
+        // media: [
+        //     {
+        //     type: 'image',
+        //     url: 'url',
+        //     caption: 'caption'
+        //     },
+        // ],
+        // liveUrl: 'url',
     },
     {
         id: 2,
