@@ -132,7 +132,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.5 }}
               style={{
-                fontSize: "clamp(10px, 1.5vw, 18px)",
+                fontSize: "clamp(14px, 1.5vw, 18px)",
                 color: "rgba(255,255,255,0.6)",
                 textAlign: "start",
                 lineHeight: 1.6,
