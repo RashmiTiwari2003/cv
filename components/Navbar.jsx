@@ -78,7 +78,7 @@ const Navbar = () => {
           flexDirection: { xs: "row", lg: "column" },
           alignItems: "center",
           justifyContent: { xs: "space-between", sm: "center" },
-          gap: 2,
+          gap: {xs : 1, sm: 2 },
         }}
       >
         <Stack spacing={{ xs: 1, sm: 2 }} alignItems="center" display={{ xs: "flex", sm: "flex" }} direction={{ xs: "row", lg: "column" }}>
@@ -129,7 +129,7 @@ const Navbar = () => {
 
         <Divider orientation={{ xs: "vertical", lg: "horizontal" }} flexItem sx={{ width: { xs: 2, lg: 32 }, bgcolor: "grey.700" }} />
 
-        <Stack spacing={{ xs: 0.5, sm: 1 }} alignItems="center" direction={{ xs: "row", lg: "column" }}>
+        <Stack spacing={{ xs: 0.2, sm: 1 }} alignItems="center" direction={{ xs: "row", lg: "column" }}>
           <IconButton 
             component="a"
             href="https://github.com/RashmiTiwari2003"

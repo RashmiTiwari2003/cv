@@ -53,13 +53,13 @@ const Hero = () => {
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: "70vh", sm: "100vh" },
+        minHeight: { xs: "85vh", sm: "100vh" },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        pl: { xs: 6, lg: 3 },
-        pr: { xs: 6, lg: 0 },
+        pl: { xs: 3, lg: 3 },
+        pr: { xs: 3, lg: 0 },
         overflow: "hidden",
       }}
     >
