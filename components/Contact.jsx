@@ -64,13 +64,39 @@ const Contact = () => {
   const sectionRef = useRef(null)
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 })
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState("")
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" })
   const titleText = "Let's Work Together"
 
-  const handleSubmit = (e) => {
+  const handleChange = (field) => (e) =>
+    setForm((prev) => ({ ...prev, [field]: e.target.value }))
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate form submission
-    setFormSubmitted(true)
-    setTimeout(() => setFormSubmitted(false), 3000)
+    setSending(true)
+    setError("")
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      })
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}))
+        throw new Error(data.error || "Could not send the message.")
+      }
+
+      setForm({ name: "", email: "", subject: "", message: "" })
+      setFormSubmitted(true)
+      setTimeout(() => setFormSubmitted(false), 3000)
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -392,7 +418,11 @@ const Contact = () => {
               backdropFilter: "blur(8px)",
             }}
           >
-            <Box component="form" sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
+            <Box
+              component="form"
+              onSubmit={handleSubmit}
+              sx={{ display: "flex", flexDirection: "column", gap: 3 }}
+            >
               <Box
                 sx={{
                   display: "grid",
@@ -400,16 +430,58 @@ const Contact = () => {
                   gap: 3,
                 }}
               >
-                <Field label="Name" placeholder="John Doe" />
-                <Field label="Email" placeholder="john@example.com" />
+                <Field
+                  label="Name"
+                  placeholder="John Doe"
+                  name="name"
+                  required
+                  value={form.name}
+                  onChange={handleChange("name")}
+                />
+                <Field
+                  label="Email"
+                  placeholder="john@example.com"
+                  name="email"
+                  type="email"
+                  required
+                  value={form.email}
+                  onChange={handleChange("email")}
+                />
               </Box>
 
-              <Field label="Subject" placeholder="Project Inquiry" />
-              <Field label="Message" placeholder="Tell me about your project..." multiline rows={4} />
+              <Field
+                label="Subject"
+                placeholder="Project Inquiry"
+                name="subject"
+                required
+                value={form.subject}
+                onChange={handleChange("subject")}
+              />
+              <Field
+                label="Message"
+                placeholder="Tell me about your project..."
+                name="message"
+                required
+                multiline
+                rows={4}
+                value={form.message}
+                onChange={handleChange("message")}
+              />
+
+              {error && (
+                <Typography sx={{ fontSize: 13, color: "#f87171" }}>{error}</Typography>
+              )}
+              {formSubmitted && (
+                <Typography sx={{ fontSize: 13, color: "#4ade80" }}>
+                  Thanks! Your message has been sent.
+                </Typography>
+              )}
 
               <MotionButton
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                type="submit"
+                disabled={sending}
+                whileHover={{ scale: sending ? 1 : 1.02 }}
+                whileTap={{ scale: sending ? 1 : 0.98 }}
                 sx={{
                   textTransform: "none",
                   py: 2,
@@ -420,9 +492,10 @@ const Contact = () => {
                   display: "flex",
                   gap: 1,
                   "&:hover": { opacity: 0.9 },
+                  "&.Mui-disabled": { color: "rgba(255,255,255,0.6)", opacity: 0.6 },
                 }}
               >
-                Send Message
+                {sending ? "Sending..." : "Send Message"}
                 <Send size={18} />
               </MotionButton>
             </Box>

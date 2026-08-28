@@ -2,18 +2,19 @@ const experiences = [
     {
         id: 1,
         title: 'Junior Software Engineer',
-        company: 'Geogo Techsolutions',
+        company: 'Kriyam.ai',
         type: 'Full-time',
         location: 'Kolkata, India',
         period: 'June 2025 - Present',
         description: [
+            'Designed and developed a knowledge graph-based system using Neo4j, to structure and connect entities and relationships for intelligent data retrieval and AI-driven processing',
             'Designed and implemented a secure credit-based system for AI Agents and Tools in AdonisJS enabling a secure and regulated system.',
             'Built Django backend services for agent-driven workflow execution with MCP integrations, Redis-based relay architecture, real-time chat, and event streaming.',
             'Built an admin portal with usage analytics, credit management, and user activity tracking across the platform.',
             'Developed an agentic workflow orchestration platform using Django and React, enabling visual multi-step process design.',
             'Engineered an interactive workflow canvas with React-Konva featuring draggable nodes, connectors, zoom/pan, and dynamic state management.'
         ],
-        technologies: ['React', 'Django', 'AdonisJS', 'PostgreSQL', 'React-Konva', 'AWS'],
+        technologies: ['React', 'Django', 'AdonisJS', 'PostgreSQL', 'React-Konva', 'AWS', 'Neo4j'],
     },
     {
         id: 2,
